@@ -1,4 +1,4 @@
-# The Bitter Lesson: How Computation Outperforms Human Knowledge
+# How Computation Outperforms Human Knowledge
 
 Have you ever wondered why artificial intelligence (AI) has made such rapid progress in recent years? A significant part of the answer lies in a concept known as **["The Bitter Lesson,"](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)** introduced by AI researcher Rich Sutton. In this blog post, we'll explore this concept and demonstrate its core principle using a simple Python simulation.
 
