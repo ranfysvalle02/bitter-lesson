@@ -1,6 +1,6 @@
 # How Computation Outperforms Human Knowledge
 
-![](https://brainsciences.org/wp-content/uploads/2020/03/CompBrain-300x184.jpg)
+![](https://ginimachine.com/wp-content/uploads/2021/09/Computer-Vs-Human-Which-One-is-Best-for-Risk-Managementpng.png)
 
 Have you ever wondered why artificial intelligence (AI) has made such rapid progress in recent years? A significant part of the answer lies in a concept known as **["The Bitter Lesson,"](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)** introduced by AI researcher Rich Sutton. In this blog post, we'll explore this concept and demonstrate its core principle using a simple Python simulation.
 
