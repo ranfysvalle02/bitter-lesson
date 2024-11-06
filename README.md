@@ -161,7 +161,16 @@ As computational resources continue to grow, focusing on general-purpose algorit
   - **Performance Scales with Computation:** The performance of the general method improves as computation time increases. This is evident from the increasing solution quality with longer computation times. This demonstrates the power of general methods that leverage computation to learn and adapt.
   - **Trend:** Given enough computation time, the general method can potentially surpass the specialized method's performance. This is particularly noticeable for larger problem sizes, where the general method's performance improves significantly with increased computation time.
 
-  
+## Limitations of General Methods
+
+### Data Dependence
+
+General methods, particularly those based on machine learning, often require vast amounts of data to learn effectively. This data is used to train the algorithms, allowing them to make accurate predictions or decisions. However, acquiring and processing such large amounts of data can be challenging and resource-intensive.
+
+### Data Quality and Bias
+
+Another challenge is the quality of the data. Poor quality data can lead to poor performance, and even high-quality data can introduce biases if it's not representative of the problem space. This can lead to algorithms that perform well on the training data but fail to generalize to new, unseen data.
+
 ### The Future of AI: A Double-Edged Sword
 
 ["The Bitter Lesson" ](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)serves as a guiding principle for the future of AI:
