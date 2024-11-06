@@ -12,7 +12,7 @@ At its heart, "The Bitter Lesson" observes that:
 
 In other words, algorithms that can learn and improve through computation tend to outperform those that depend on hand-crafted human expertise, especially as computational resources grow.
 
-## The Two Approaches to Problem Solving
+## Problem Solving
 ![](https://keoughp.wordpress.com/wp-content/uploads/2010/05/flowchart.jpg)
 
 Imagine you're trying to solve a complex problem. There are two main strategies you might use:
