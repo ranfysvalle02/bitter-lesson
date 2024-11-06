@@ -2,6 +2,7 @@
 # Illustrating how general methods leveraging computation outperform specialized methods over time
 
 import time
+import math
 
 # Simulate a specialized method with human knowledge
 def specialized_method(problem_size):
@@ -14,8 +15,8 @@ def general_method(problem_size, computation_time):
     # Assume a constant computation speed (steps per second)
     computation_speed = 1000  # Arbitrary units
     total_steps = int(computation_time * computation_speed)
-    # Improvement per step decreases with larger problem sizes
-    improvement_per_step = 1.0 / problem_size
+    # Improvement per step increases logarithmically with total steps and decreases with larger problem sizes
+    improvement_per_step = math.log(total_steps + 1) / problem_size
 
     # Calculate total improvement
     solution_quality = total_steps * improvement_per_step
@@ -77,24 +78,24 @@ Problem Size 20000: Solution Quality = 0.70
 **General Method Results:**
 
 Problem Size 5000:
-  Computation Time 0.1s -> Solution Quality: 0.02
-  Computation Time 0.5s -> Solution Quality: 0.10
-  Computation Time 1.0s -> Solution Quality: 0.20
-  Computation Time 2.0s -> Solution Quality: 0.40
+  Computation Time 0.1s -> Solution Quality: 0.09
+  Computation Time 0.5s -> Solution Quality: 0.62
+  Computation Time 1.0s -> Solution Quality: 1.00
+  Computation Time 2.0s -> Solution Quality: 1.00
 (For problem size 5000, the solution quality improves with more computation time.)
 
 Problem Size 10000:
-  Computation Time 0.1s -> Solution Quality: 0.01
-  Computation Time 0.5s -> Solution Quality: 0.05
-  Computation Time 1.0s -> Solution Quality: 0.10
-  Computation Time 2.0s -> Solution Quality: 0.20
+  Computation Time 0.1s -> Solution Quality: 0.05
+  Computation Time 0.5s -> Solution Quality: 0.31
+  Computation Time 1.0s -> Solution Quality: 0.69
+  Computation Time 2.0s -> Solution Quality: 1.00
 (For problem size 10000, the solution quality improves with more computation time.)
 
 Problem Size 20000:
-  Computation Time 0.1s -> Solution Quality: 0.01
-  Computation Time 0.5s -> Solution Quality: 0.03
-  Computation Time 1.0s -> Solution Quality: 0.05
-  Computation Time 2.0s -> Solution Quality: 0.10
+  Computation Time 0.1s -> Solution Quality: 0.02
+  Computation Time 0.5s -> Solution Quality: 0.16
+  Computation Time 1.0s -> Solution Quality: 0.35
+  Computation Time 2.0s -> Solution Quality: 0.76
 (For problem size 20000, the solution quality improves with more computation time.)
 
 === Conclusion ===
