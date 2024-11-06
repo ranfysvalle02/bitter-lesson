@@ -161,12 +161,6 @@ As computational resources continue to grow, focusing on general-purpose algorit
   - **Performance Scales with Computation:** The performance of the general method improves as computation time increases. This is evident from the increasing solution quality with longer computation times. This demonstrates the power of general methods that leverage computation to learn and adapt.
   - **Trend:** Given enough computation time, the general method can potentially surpass the specialized method's performance. This is particularly noticeable for larger problem sizes, where the general method's performance improves significantly with increased computation time.
 
-
-### Key Takeaways
-
-- **Scalability:** The general method's performance scales with both computation time and problem complexity. This makes it more adaptable to a variety of problems, as it can learn and improve over time.
-- **Computation as a Resource:** The general method leverages computational power to explore more possibilities and improve its performance. This is in contrast to the specialized method, which does not benefit from additional computation.
-- **Limitations of Specialized Methods:** While specialized methods can be effective in certain contexts, they are constrained by the extent of human-designed features. They cannot easily adapt to new problems or improve their performance with additional computation, making them less flexible than general methods.
   
 ## Reflecting on the Future of AI
 
