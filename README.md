@@ -30,8 +30,9 @@ Let's bring these ideas to life with a Python simulation. We'll compare the spec
 The specialized method represents algorithms heavily reliant on human-designed features. Its performance is constant, unaffected by additional computation.
 
 ```python
+# Simulate a specialized method with human knowledge
 def specialized_method(problem_size):
-    # Fixed solution quality, independent of problem size
+    # Return a fixed solution quality, independent of problem size
     solution_quality = 0.7
     return solution_quality
 ```
@@ -41,16 +42,19 @@ def specialized_method(problem_size):
 The general method simulates algorithms that improve through computation, such as machine learning models.
 
 ```python
+# Simulate a general method using search and learning
 def general_method(problem_size, computation_time):
     # Assume a constant computation speed (steps per second)
     computation_speed = 1000  # Arbitrary units
     total_steps = int(computation_time * computation_speed)
-    # Improvement per step decreases with larger problem sizes
-    improvement_per_step = 1.0 / problem_size
+    # Improvement per step increases logarithmically with total steps and decreases with larger problem sizes
+    improvement_per_step = math.log(total_steps + 1) / problem_size
+
     # Calculate total improvement
     solution_quality = total_steps * improvement_per_step
     # Cap the solution quality at 1.0 (maximum possible quality)
-    return min(solution_quality, 1.0)
+    solution_quality = min(solution_quality, 1.0)
+    return solution_quality
 ```
 
 ### Running the Simulation
@@ -60,32 +64,37 @@ We'll compare the two methods across various problem sizes and computation times
 ```python
 def main():
     print("=== The Bitter Lesson Demonstration ===\n")
-    print("Comparing Specialized and General Methods in Problem Solving\n")
+    print("This simulation compares two problem-solving approaches:")
+    print("1. **Specialized Method**: Uses built-in human knowledge. Performance remains constant regardless of computation time.")
+    print("2. **General Method**: Leverages computation through search and learning. Performance improves with more computation time.\n")
 
-    problem_sizes = [5000, 10000, 20000]  # Different problem complexities
-    computation_times = [0.1, 0.5, 1.0, 2.0]  # Computation times in seconds
+    problem_sizes = [5000, 10000, 20000]  # Various problem sizes
+    computation_times = [0.1, 0.5, 1.0, 2.0]   # Different computation times
 
-    # Specialized Method Results
-    print("Specialized Method Results (Constant Performance):")
+    # Step 1: Demonstrate the Specialized Method
+    print("**Specialized Method Results:**")
     for size in problem_sizes:
         quality = specialized_method(size)
-        print(f"  Problem Size {size}: Solution Quality = {quality:.2f}")
-    print("\n")
+        print(f"Problem Size {size}: Solution Quality = {quality:.2f}")
+    print("\n(Notice that the specialized method's performance remains constant across different problem sizes.)\n")
 
-    # General Method Results
-    print("General Method Results (Performance Improves with Computation):")
+    # Step 2: Demonstrate the General Method
+    print("**General Method Results:**")
     for size in problem_sizes:
         print(f"\nProblem Size {size}:")
-        for time in computation_times:
-            quality = general_method(size, time)
-            print(f"  Computation Time {time}s -> Solution Quality: {quality:.2f}")
-        print(f"(Performance improves with more computation time for problem size {size}.)")
+        for comp_time in computation_times:
+            quality = general_method(size, comp_time)
+            print(f"  Computation Time {comp_time}s -> Solution Quality: {quality:.2f}")
+        print(f"(For problem size {size}, the solution quality improves with more computation time.)")
+    print()
 
-    # Conclusion
-    print("\n=== Conclusion ===")
-    print("The specialized method achieves a fixed solution quality, regardless of computation time or problem size.")
-    print("In contrast, the general method's performance improves with increased computation time, especially for larger problems.")
-    print("\nThis demonstrates 'The Bitter Lesson' that general methods leveraging computation can ultimately outperform specialized methods.\n")
+    # Step 3: Summarize the Findings
+    print("=== Conclusion ===")
+    print("The specialized method achieves a fixed solution quality regardless of computation time or problem size.")
+    print("In contrast, the general method's solution quality improves with increased computation time, especially for larger problem sizes.")
+    print("\nThis demonstrates **'The Bitter Lesson'**:")
+    print("General methods that leverage computation ultimately outperform specialized methods that rely on built-in human knowledge.\n")
+    print("As computational resources continue to grow, focusing on general-purpose algorithms and learning methods becomes increasingly advantageous.")
 
 if __name__ == "__main__":
     main()
@@ -98,70 +107,67 @@ When you run the code, you get output like this:
 ```
 === The Bitter Lesson Demonstration ===
 
-Comparing Specialized and General Methods in Problem Solving
+This simulation compares two problem-solving approaches:
+1. **Specialized Method**: Uses built-in human knowledge. Performance remains constant regardless of computation time.
+2. **General Method**: Leverages computation through search and learning. Performance improves with more computation time.
 
-Specialized Method Results (Constant Performance):
-  Problem Size 5000: Solution Quality = 0.70
-  Problem Size 10000: Solution Quality = 0.70
-  Problem Size 20000: Solution Quality = 0.70
+**Specialized Method Results:**
+Problem Size 5000: Solution Quality = 0.70
+Problem Size 10000: Solution Quality = 0.70
+Problem Size 20000: Solution Quality = 0.70
 
+(Notice that the specialized method's performance remains constant across different problem sizes.)
 
-General Method Results (Performance Improves with Computation):
+**General Method Results:**
 
 Problem Size 5000:
-  Computation Time 0.1s -> Solution Quality: 0.02
-  Computation Time 0.5s -> Solution Quality: 0.10
-  Computation Time 1.0s -> Solution Quality: 0.20
-  Computation Time 2.0s -> Solution Quality: 0.40
-(Performance improves with more computation time for problem size 5000.)
+  Computation Time 0.1s -> Solution Quality: 0.09
+  Computation Time 0.5s -> Solution Quality: 0.62
+  Computation Time 1.0s -> Solution Quality: 1.00
+  Computation Time 2.0s -> Solution Quality: 1.00
+(For problem size 5000, the solution quality improves with more computation time.)
 
 Problem Size 10000:
-  Computation Time 0.1s -> Solution Quality: 0.01
-  Computation Time 0.5s -> Solution Quality: 0.05
-  Computation Time 1.0s -> Solution Quality: 0.10
-  Computation Time 2.0s -> Solution Quality: 0.20
-(Performance improves with more computation time for problem size 10000.)
+  Computation Time 0.1s -> Solution Quality: 0.05
+  Computation Time 0.5s -> Solution Quality: 0.31
+  Computation Time 1.0s -> Solution Quality: 0.69
+  Computation Time 2.0s -> Solution Quality: 1.00
+(For problem size 10000, the solution quality improves with more computation time.)
 
 Problem Size 20000:
-  Computation Time 0.1s -> Solution Quality: 0.01
-  Computation Time 0.5s -> Solution Quality: 0.03
-  Computation Time 1.0s -> Solution Quality: 0.05
-  Computation Time 2.0s -> Solution Quality: 0.10
-(Performance improves with more computation time for problem size 20000.)
+  Computation Time 0.1s -> Solution Quality: 0.02
+  Computation Time 0.5s -> Solution Quality: 0.16
+  Computation Time 1.0s -> Solution Quality: 0.35
+  Computation Time 2.0s -> Solution Quality: 0.76
+(For problem size 20000, the solution quality improves with more computation time.)
 
 === Conclusion ===
-The specialized method achieves a fixed solution quality, regardless of computation time or problem size.
-In contrast, the general method's performance improves with increased computation time, especially for larger problems.
+The specialized method achieves a fixed solution quality regardless of computation time or problem size.
+In contrast, the general method's solution quality improves with increased computation time, especially for larger problem sizes.
 
-This demonstrates 'The Bitter Lesson' that general methods leveraging computation can ultimately outperform specialized methods.
+This demonstrates **'The Bitter Lesson'**:
+General methods that leverage computation ultimately outperform specialized methods that rely on built-in human knowledge.
+
+As computational resources continue to grow, focusing on general-purpose algorithms and learning methods becomes increasingly advantageous.
 ```
 
 ### Interpreting the Results
 
 - **Specialized Method:**
-  - **Consistent Performance:** The solution quality remains at **0.70** for all problem sizes.
-  - **Limitation:** Does not benefit from additional computation time.
-
+  - **Consistent Performance:** The solution quality remains at **0.70** for all problem sizes, indicating that the performance of this method is not influenced by the complexity of the problem. This is a characteristic of specialized methods, which are designed with a specific problem in mind and thus their performance remains constant.
+  - **Limitation:** The specialized method does not benefit from additional computation time. This is because it is not designed to learn or improve over time, but rather to solve a specific problem based on pre-existing human knowledge.
+ 
 - **General Method:**
-  - **Performance Scales with Computation:**
-    - For **smaller problem sizes**, the solution quality improves more rapidly.
-    - For **larger problem sizes**, it takes more computation time to see significant improvements.
-  - **Trend:** Given enough computation time, the general method can potentially surpass the specialized method's performance.
+  - **Performance Scales with Computation:** The performance of the general method improves as computation time increases. This is evident from the increasing solution quality with longer computation times. This demonstrates the power of general methods that leverage computation to learn and adapt.
+  - **Trend:** Given enough computation time, the general method can potentially surpass the specialized method's performance. This is particularly noticeable for larger problem sizes, where the general method's performance improves significantly with increased computation time.
+
 
 ### Key Takeaways
 
-- **Scalability:** The general method scales with computation time and problem complexity, making it more adaptable to a variety of problems.
-- **Computation as a Resource:** Leveraging computational power allows general methods to explore more possibilities and improve over time.
-- **Limitations of Specialized Methods:** While effective in certain contexts, specialized methods are constrained by the extent of human-designed features and cannot easily adapt or improve with additional computation.
-
-## Why Does "The Bitter Lesson" Matter?
-
-As computational resources continue to grow, the advantages of general methods become more pronounced. This has several implications:
-
-- **Artificial Intelligence Development:** Machine learning models, especially deep learning architectures, exemplify the power of general methods. They've achieved remarkable success in areas like image recognition, natural language processing, and game playing by leveraging massive computational resources.
-- **Research Focus:** The AI community increasingly prioritizes developing general-purpose algorithms that can learn and adapt, rather than crafting specialized solutions for specific problems.
-- **Real-World Applications:** General methods are more flexible and can be applied to a wide range of tasks, making them valuable in dynamic and complex environments.
-
+- **Scalability:** The general method's performance scales with both computation time and problem complexity. This makes it more adaptable to a variety of problems, as it can learn and improve over time.
+- **Computation as a Resource:** The general method leverages computational power to explore more possibilities and improve its performance. This is in contrast to the specialized method, which does not benefit from additional computation.
+- **Limitations of Specialized Methods:** While specialized methods can be effective in certain contexts, they are constrained by the extent of human-designed features. They cannot easily adapt to new problems or improve their performance with additional computation, making them less flexible than general methods.
+  
 ## Reflecting on the Future of AI
 
 ["The Bitter Lesson" ](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)serves as a guiding principle for the future of AI:
