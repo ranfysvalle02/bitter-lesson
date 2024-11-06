@@ -14,6 +14,8 @@ In other words, algorithms that can learn and improve through computation tend t
 
 ## The Two Approaches to Problem Solving
 
+![](https://i.ytimg.com/vi/MPWtR--nU0k/sddefault.jpg)
+
 Imagine you're trying to solve a complex problem. There are two main strategies you might use:
 
 1. **Specialized Method:** This approach relies on built-in human knowledge and expertise. It's like having a detailed guide tailored to the problem. While effective up to a point, its performance remains relatively constant, regardless of how much computation time you invest.
